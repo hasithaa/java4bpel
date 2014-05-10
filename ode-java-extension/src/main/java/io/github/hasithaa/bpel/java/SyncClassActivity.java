@@ -68,11 +68,12 @@ public class SyncClassActivity extends AbstractSyncExtensionOperation {
                     "Invalid class name found.");
         }
 
-        NodeList paramList = element.getChildNodes();
+        NodeList paramNodeList = element.getChildNodes();
         Node param = null;
         ArrayList<String> paramsList = new ArrayList<String>();
-        for (int i = 0; i < paramList.getLength(); i++) {
-            param = paramList.item(i);
+        for (int i = 0; i < paramNodeList.getLength(); i++) {
+            param = paramNodeList.item(i);
+            // Processing only param elements
             if (ExtensionConstants.ACTIVITY_PARAM.equals(param.getLocalName()) &&
                     ExtensionConstants.NAMESPACE.equals(param.getNamespaceURI())) {
                 try {
@@ -82,12 +83,10 @@ public class SyncClassActivity extends AbstractSyncExtensionOperation {
                     throw new FaultException(ExtensionConstants.QNAME_FAULT_MALFORMED_ACTIVITY,
                             "Found malformed param element");
                 }
-            } else {
-                throw new FaultException(ExtensionConstants.QNAME_FAULT_MALFORMED_ACTIVITY,
-                        "Found unsupported element :" + param.getLocalName());
             }
         }
-        params = (String[]) paramsList.toArray();
+        params = new String[paramsList.size()];
+        params = paramsList.toArray(params);
     }
 
 }
