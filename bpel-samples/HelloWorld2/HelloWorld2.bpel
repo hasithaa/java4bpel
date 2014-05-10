@@ -71,7 +71,7 @@
       </assign>
 
 			<extensionActivity>
-                    <java:invokeClass name="InvokeClass" class="io.github.hasithaa.bpel.java.sample.LogVariable">
+                    <java:invokeClass name="InvokeClass" class="io.github.hasithaa.java4bpel.sample.LogVariable">
                         <java:param>myVar</java:param>
 						<java:param>myResponseVar</java:param>
                     </java:invokeClass>

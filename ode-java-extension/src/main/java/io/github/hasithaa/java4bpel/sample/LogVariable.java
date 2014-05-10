@@ -13,10 +13,10 @@
 *See the License for the specific language governing permissions and
 *limitations under the License.
 */
-package io.github.hasithaa.bpel.java.sample;
+package io.github.hasithaa.java4bpel.sample;
 
-import io.github.hasithaa.bpel.java.InvokeClassActivity;
-import io.github.hasithaa.bpel.java.ProcessData;
+import io.github.hasithaa.java4bpel.InvokeClassActivity;
+import io.github.hasithaa.java4bpel.ProcessData;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.ode.utils.DOMUtils;
